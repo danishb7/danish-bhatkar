@@ -205,12 +205,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (additionalCerts.style.display === 'none') {
                 additionalCerts.style.display = 'grid';
 				viewMoreContainer.style.order = 1; // Move button below the additional certs
-                // viewMoreButton.textContent = 'Show Less';
-                viewMoreButton.querySelector('span').textContent = 'Show Less';
+                viewMoreButton.textContent = 'Show Less';
+                // viewMoreButton.querySelector('span').textContent = 'Show Less';
             } else {
                 additionalCerts.style.display = 'none';
 				viewMoreContainer.style.order = 0; // Move button back to the original position
-                viewMoreButton.textContent = 'Show Less';
+                viewMoreButton.textContent = 'View More Certifications';
             }
         });
     }
