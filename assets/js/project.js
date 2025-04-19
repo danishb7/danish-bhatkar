@@ -178,17 +178,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // For certifications -- - - - added on 4/16
+// document.addEventListener('DOMContentLoaded', function() {
+//     const viewMoreButton = document.getElementById('view-more-certs');
+//     const additionalCerts = document.getElementById('additional-certs');
+    
+//     if (viewMoreButton && additionalCerts) {
+//         viewMoreButton.addEventListener('click', function() {
+//             if (additionalCerts.style.display === 'none') {
+//                 additionalCerts.style.display = 'grid';
+//                 viewMoreButton.textContent = 'Show Less';
+//             } else {
+//                 additionalCerts.style.display = 'none';
+//                 viewMoreButton.textContent = 'View More Certifications';
+//             }
+//         });
+//     }
+// });
+
 document.addEventListener('DOMContentLoaded', function() {
     const viewMoreButton = document.getElementById('view-more-certs');
     const additionalCerts = document.getElementById('additional-certs');
+	const viewMoreContainer = document.getElementById('view-more-container');
     
     if (viewMoreButton && additionalCerts) {
         viewMoreButton.addEventListener('click', function() {
             if (additionalCerts.style.display === 'none') {
                 additionalCerts.style.display = 'grid';
+				viewMoreContainer.style.order = 1; // Move button below the additional certs
                 viewMoreButton.textContent = 'Show Less';
             } else {
                 additionalCerts.style.display = 'none';
+				viewMoreContainer.style.order = 0; // Move button back to the original position
                 viewMoreButton.textContent = 'View More Certifications';
             }
         });
