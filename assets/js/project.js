@@ -88,8 +88,11 @@ function openProjectModal(projectId) {
         modalDetails.appendChild(li);
     });
     
-    // Show the modal
+    // Show the modal with fade animation
     modal.style.display = "block";
+    setTimeout(() => {
+        modal.classList.add("show");
+    }, 10);
 }
 
 // Add click event listeners to all project cards
@@ -105,13 +108,19 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Close modal when clicking the X button
     closeButton.addEventListener("click", function() {
-        modal.style.display = "none";
+        modal.classList.remove("show");
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 200);
     });
     
     // Close modal when clicking outside of it
     window.addEventListener("click", function(event) {
         if (event.target === modal) {
-            modal.style.display = "none";
+            modal.classList.remove("show");
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 200);
         }
     });
 });
@@ -154,8 +163,11 @@ function openAbstractModal(publicationId) {
     // Set paper link
     modalPaperLink.href = publication.paperLink;
     
-    // Show the modal
+    // Show the modal with fade animation
     abstractModal.style.display = "block";
+    setTimeout(() => {
+        abstractModal.classList.add("show");
+    }, 10);
 }
 
 // Add event listeners when DOM is loaded
@@ -173,14 +185,20 @@ document.addEventListener("DOMContentLoaded", function() {
     // Close modal when clicking the X button
     if (abstractCloseButton) {
         abstractCloseButton.addEventListener("click", function() {
-            abstractModal.style.display = "none";
+            abstractModal.classList.remove("show");
+            setTimeout(() => {
+                abstractModal.style.display = "none";
+            }, 200);
         });
     }
     
     // Close modal when clicking outside of it
     window.addEventListener("click", function(event) {
         if (event.target === abstractModal) {
-            abstractModal.style.display = "none";
+            abstractModal.classList.remove("show");
+            setTimeout(() => {
+                abstractModal.style.display = "none";
+            }, 200);
         }
     });
 });
