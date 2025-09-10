@@ -569,19 +569,21 @@
 									<p>Feel free to reach out to me using the form below, or connect with me directly via Email or LinkedIn.</p>
 									
 									<!-- Contact Form -->
-									<form method="post" action="https://formspree.io/f/YOUR_FORM_ID">
+									<form id="contact-form">
 										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Your Name" required /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email" required /></div>
+											<div class="col-6 col-12-xsmall"><input type="text" name="from_name" id="name" placeholder="Your Name" required /></div>
+											<div class="col-6 col-12-xsmall"><input type="email" name="from_email" id="email" placeholder="Your Email" required /></div>
 											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" required /></div>
 											<div class="col-12"><textarea name="message" id="message" placeholder="Your Message" rows="6" required></textarea></div>
 											<div class="col-12">
 												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
+													<li><input type="submit" id="submit-btn" class="primary" value="Send Message" /></li>
 													<li><input type="reset" value="Clear Form" /></li>
 												</ul>
 											</div>
 										</div>
+										<!-- Status message -->
+										<div id="form-status" style="margin-top: 1em; text-align: center; display: none;"></div>
 									</form>
 									
 									<!-- Direct Contact Options -->
@@ -948,6 +950,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/project.js"></script>
+			<!-- EmailJS -->
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+			<script src="assets/js/contact.js"></script>
 
 	</body>
 </html>
