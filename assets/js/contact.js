@@ -1,7 +1,7 @@
 // EmailJS Contact Form Handler
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize EmailJS with your public key
-    emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your actual public key
+    emailjs.init('apyTEi8EyZyH04i-1'); // Replace with your actual public key
     
     const contactForm = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formStatus.innerHTML = '<p style="color: #4acaa8;">Sending your message...</p>';
             
             // Send email using EmailJS
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', contactForm)
+            emailjs.sendForm('service_b27w4mc', 'template_lbsl1t7', contactForm)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
                     
