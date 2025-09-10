@@ -1,6 +1,15 @@
 // Project details data
 const projectData = {
     project1: {
+        title: "Text-CRS: Enhancing Certified Robustness for Adversarial Text Classification",
+        timeline: "Jan 2025 - Apr 2025",
+        details: [
+            "Developed and extended the Text-CRS framework, achieving 84.5% accuracy (BERT) and 74.1% accuracy (LSTM) on the AGNews dataset after conducting word-level attacks (synonym substitution) to evaluate model robustness.",
+            "Constructed smoothed classifiers and improved adversarial robustness by 5% through noise injection and hyperparameter tuning.",
+            "Conducted evaluations using PyTorch, TextAttack, and NLP datasets (AG News, IMDB)."
+        ]
+    },
+    project2: {
         title: "Wildfire Detection with ResNet-50",
         timeline: "Nov 2024 - Dec 2024",
         details: [
@@ -8,7 +17,7 @@ const projectData = {
             "Evaluated cross-dataset generalization by testing models trained on one dataset across the remaining 10, identifying the FLAME dataset as the most optimal for generalization with 73% average accuracy and an F1 score of 0.82."
         ]
     },
-    project2: {
+    project3: {
         title: "Facial Recognition App",
         timeline: "May 2024 - Jun 2024",
         details: [
@@ -16,7 +25,7 @@ const projectData = {
             "Developed a facial recognition app with Kivy and OpenCV achieving 97% testing accuracy in distinguishing images."
         ]
     },
-    project3: {
+    project4: {
         title: "Statistical Analysis of Premier League Dataset using SAS",
         timeline: "Oct 2023 - Dec 2023",
         details: [
@@ -24,7 +33,7 @@ const projectData = {
             "Utilized correlation and regression techniques, achieving 90.48% accuracy in predicting future results."
         ]
     },
-    project4: {
+    project5: {
         title: "Data Visualization for Olympics Dashboard",
         timeline: "Sep 2023 - Dec 2023",
         details: [
@@ -33,7 +42,7 @@ const projectData = {
             "Improved usability and visual storytelling by integrating CSS for an enhanced user interface and aesthetic appeal."
         ]
     },
-    project5: {
+    project6: {
         title: "Smart Car Parking Security: Multi-Modal Authentication & Attack Analysis",
         timeline: "Sep 2024 - Dec 2024",
         details: [
@@ -43,12 +52,12 @@ const projectData = {
             "Demonstrated the impact of fusion attacks on interconnected systems, providing valuable insights for improving smart parking infrastructure security."
         ]
     },
-    project6: {
+    project7: {
         title: "Comparative Analysis of Product Price and Commodity Price Trends",
         timeline: "Mar 2022 - Jan 2023",
         details: [
             "Developed a PowerBI dashboard to assess the correlation between raw material prices and the corresponding fluctuations in finished product prices.",
-            "Executed ETL and data modeling processes to integrate commodity prices data sourced from 3+ online platforms and purchase costs of finished goods retrieved from the company’s ERP system.",
+            "Executed ETL and data modeling processes to integrate commodity prices data sourced from 3+ online platforms and purchase costs of finished goods retrieved from the company's ERP system.",
             "Delivered actionable insights, improving data accuracy by 25% and reducing reporting time by 10 hours per month."
         ]
     }
