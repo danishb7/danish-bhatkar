@@ -3538,26 +3538,32 @@ input, select, textarea {
     overflow: hidden;
     transition: opacity 0.2s ease-in-out, max-height 0.2s ease-in-out, margin-top 0.2s ease-in-out;
     margin-top: 0;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
 }
 
 .additional-certs.show {
     opacity: 1;
-    max-height: 500px; /* Adjust based on content */
+    max-height: 600px; /* Increased for better spacing */
     margin-top: 30px;
 }
 
-.cert-card {
+/* Ensure all cert cards have consistent sizing */
+.featured-certs .cert-card,
+.additional-certs .cert-card {
+    min-height: 90px;
+    align-items: center;
     display: flex;
     background-color: #f8f8f8;
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 90px;
-    align-items: center;
 }
 
-.cert-card:hover {
+/* Removed duplicate - using the specific rules above for consistency */
+
+.featured-certs .cert-card:hover,
+.additional-certs .cert-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
