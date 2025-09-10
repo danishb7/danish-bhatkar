@@ -566,8 +566,27 @@
 							<section id="eight">
 								<div class="container">
 									<h3>Contact Me</h3>
-									<p>Please reach out to me via Email or my LinkedIn profile.</p>
-									<div style="text-align: center; margin-top: 2em;">
+									<p>Feel free to reach out to me using the form below, or connect with me directly via Email or LinkedIn.</p>
+									
+									<!-- Contact Form -->
+									<form method="post" action="https://formspree.io/f/YOUR_FORM_ID">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Your Name" required /></div>
+											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email" required /></div>
+											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" required /></div>
+											<div class="col-12"><textarea name="message" id="message" placeholder="Your Message" rows="6" required></textarea></div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" class="primary" value="Send Message" /></li>
+													<li><input type="reset" value="Clear Form" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+									
+									<!-- Direct Contact Options -->
+									<div style="text-align: center; margin-top: 3em; padding-top: 2em; border-top: 2px solid #f4f4f4;">
+										<p><strong>Or connect with me directly:</strong></p>
 										<ul class="actions special">
 											<li><a href="mailto:bhatkardanish7@gmail.com" class="button primary icon solid fa-envelope">Email Me</a></li>
 											<li><a href="https://www.linkedin.com/in/danish-bhatkar/" target="_blank" class="button icon brands fa-linkedin">LinkedIn</a></li>

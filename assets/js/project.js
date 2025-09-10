@@ -229,13 +229,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (viewMoreButton && additionalCerts) {
         viewMoreButton.addEventListener('click', function() {
-            if (additionalCerts.style.display === 'none') {
+            if (!additionalCerts.classList.contains('show')) {
+                // Show additional certifications
                 additionalCerts.style.display = 'grid';
+                setTimeout(() => {
+                    additionalCerts.classList.add('show');
+                }, 10);
 				viewMoreContainer.style.order = 1; // Move button below the additional certs
                 viewMoreButton.textContent = 'Show Less';
-                // viewMoreButton.querySelector('span').textContent = 'Show Less';
             } else {
-                additionalCerts.style.display = 'none';
+                // Hide additional certifications
+                additionalCerts.classList.remove('show');
+                setTimeout(() => {
+                    additionalCerts.style.display = 'none';
+                }, 200);
 				viewMoreContainer.style.order = 0; // Move button back to the original position
                 viewMoreButton.textContent = 'View More Certifications';
             }
