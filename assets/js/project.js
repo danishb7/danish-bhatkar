@@ -225,20 +225,30 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function() {
     const viewMoreButton = document.getElementById('view-more-certs');
     const additionalCerts = document.getElementById('additional-certs');
-	const viewMoreContainer = document.getElementById('view-more-container');
+    const viewMoreContainer = document.getElementById('view-more-container');
     
-    if (viewMoreButton && additionalCerts) {
+    if (viewMoreButton && additionalCerts && viewMoreContainer) {
         viewMoreButton.addEventListener('click', function() {
             if (!additionalCerts.classList.contains('show')) {
                 // Show additional certifications
                 additionalCerts.classList.add('show');
-				viewMoreContainer.style.order = 1; // Move button below the additional certs
-                viewMoreButton.textContent = 'Show Less';
+                
+                // Move button to after additional certifications
+                additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts.nextSibling);
+                
+                // Update button text
+                viewMoreButton.querySelector('span').textContent = 'Show Less';
+                viewMoreButton.querySelector('i').className = 'icon solid fa-angle-up';
             } else {
                 // Hide additional certifications
                 additionalCerts.classList.remove('show');
-				viewMoreContainer.style.order = 0; // Move button back to the original position
-                viewMoreButton.textContent = 'View More Certifications';
+                
+                // Move button back to after featured certifications (before additional certs)
+                additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts);
+                
+                // Update button text
+                viewMoreButton.querySelector('span').textContent = 'View More Certifications';
+                viewMoreButton.querySelector('i').className = 'icon solid fa-angle-down';
             }
         });
     }
