@@ -2703,7 +2703,7 @@ input, select, textarea {
 		background: #4acaa8;
 		color: #d2f2e9;
 		height: 100%;
-		overflow-y: auto;
+		overflow-y: hidden;
 		position: fixed;
 		text-align: center;
 		top: 0;
@@ -2736,12 +2736,12 @@ input, select, textarea {
 			-webkit-flex-shrink: 0;
 			-ms-flex-shrink: 0;
 			flex-shrink: 0;
-			padding: 3em;
+			padding: 2em 2em 1.5em 2em;
 		}
 
 			#header > header .avatar {
 				display: block;
-				margin: 0 auto 2.25em auto;
+				margin: 0 auto 1.5em auto;
 				width: 8em;
 			}
 
@@ -2763,7 +2763,7 @@ input, select, textarea {
 			flex-shrink: 0;
 			bottom: 0;
 			left: 0;
-			padding: 2em;
+			padding: 1.5em 2em;
 			width: 100%;
 		}
 
@@ -2802,7 +2802,7 @@ input, select, textarea {
 						border: 0;
 						color: #ffffff !important;
 						display: block;
-						padding: 0.85em 0;
+						padding: 0.65em 0;
 						text-decoration: none;
 					}
 
@@ -2908,7 +2908,7 @@ input, select, textarea {
 
 			/* Override for certifications section on XLarge screens */
 			#seven > .container {
-				padding-bottom: 0.5em !important;
+				padding-bottom: 0.25em !important;
 			}
 
 	}
@@ -3219,7 +3219,7 @@ input, select, textarea {
 
 			/* Override for certifications section on Small screens */
 			#seven > .container {
-				padding-bottom: 0.5em !important;
+				padding-bottom: 0.25em !important;
 			}
 
 		/* Footer */
@@ -3539,7 +3539,7 @@ input, select, textarea {
 
 /* Override container bottom padding specifically for certifications section */
 #seven > .container {
-    padding-bottom: 1em !important;
+    padding-bottom: 0.5em !important;
 }
 
 .featured-certs, .additional-certs {
