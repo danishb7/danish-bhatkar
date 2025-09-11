@@ -2839,7 +2839,7 @@ input, select, textarea {
 	}
 
 		#main > section > .container {
-			padding: 3em 0 4em 0;
+			padding: 2.5em 0 2.5em 0;
 		}
 
 		#main > section:first-child {
@@ -2913,13 +2913,9 @@ input, select, textarea {
 		/* Main */
 
 			#main > section > .container {
-				padding: 2.5em 0 2em 0;
+				padding: 2em 0 2em 0;
 			}
 
-			/* Override for certifications section on XLarge screens */
-			#seven > .container {
-				padding-bottom: 0.25em !important;
-			}
 
 	}
 
@@ -3227,10 +3223,6 @@ input, select, textarea {
 				padding: 2em 0 0 0;
 			}
 
-			/* Override for certifications section on Small screens */
-			#seven > .container {
-				padding-bottom: 0.25em !important;
-			}
 
 		/* Footer */
 
@@ -3542,15 +3534,7 @@ input, select, textarea {
 
 /* Certifications Section  - - -   added on 4/16  */
 
-/* Reduce space between certifications and next section */
-#seven {
-    margin-bottom: 0;
-}
 
-/* Override container bottom padding specifically for certifications section */
-#seven > .container {
-    padding-bottom: 0.5em !important;
-}
 
 .featured-certs, .additional-certs {
     display: grid;
