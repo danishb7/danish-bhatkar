@@ -3551,18 +3551,28 @@ input, select, textarea {
 }
 
 .additional-certs {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, margin-top 0.2s ease-in-out;
-    margin-top: 0;
+    display: none;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
     gap: 20px;
+    margin-top: 0;
 }
 
 .additional-certs.show {
+    display: grid !important;
     opacity: 1;
-    visibility: visible;
-    margin-top: 0; /* No extra margin since button handles spacing */
+    margin-top: 15px; /* Small margin when shown */
+    animation: fadeInUp 0.2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Ensure all cert cards have consistent sizing */

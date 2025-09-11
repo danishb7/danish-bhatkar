@@ -233,18 +233,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Show additional certifications
                 additionalCerts.classList.add('show');
                 
-                // Move button to after additional certifications
-                additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts.nextSibling);
+                // Move button to after additional certifications with smooth transition
+                setTimeout(() => {
+                    additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts.nextSibling);
+                }, 100); // Small delay to let animation start
                 
                 // Update button text
                 viewMoreButton.querySelector('span').textContent = 'Show Less';
                 viewMoreButton.querySelector('i').className = 'icon solid fa-angle-up';
             } else {
-                // Hide additional certifications
-                additionalCerts.classList.remove('show');
-                
-                // Move button back to after featured certifications (before additional certs)
+                // Move button back first, then hide additional certifications
                 additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts);
+                
+                // Hide additional certifications with fade out
+                setTimeout(() => {
+                    additionalCerts.classList.remove('show');
+                }, 50);
                 
                 // Update button text
                 viewMoreButton.querySelector('span').textContent = 'View More Certifications';
