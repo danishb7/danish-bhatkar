@@ -1,6 +1,15 @@
 // Project details data
 const projectData = {
     project1: {
+        title: "Text-CRS: Enhancing Certified Robustness for Adversarial Text Classification",
+        timeline: "Jan 2025 - Apr 2025",
+        details: [
+            "Developed and extended the Text-CRS framework, achieving 84.5% accuracy (BERT) and 74.1% accuracy (LSTM) on the AGNews dataset after conducting word-level attacks (synonym substitution) to evaluate model robustness.",
+            "Constructed smoothed classifiers and improved adversarial robustness by 5% through noise injection and hyperparameter tuning.",
+            "Conducted evaluations using PyTorch, TextAttack, and NLP datasets (AG News, IMDB)."
+        ]
+    },
+    project2: {
         title: "Wildfire Detection with ResNet-50",
         timeline: "Nov 2024 - Dec 2024",
         details: [
@@ -8,7 +17,7 @@ const projectData = {
             "Evaluated cross-dataset generalization by testing models trained on one dataset across the remaining 10, identifying the FLAME dataset as the most optimal for generalization with 73% average accuracy and an F1 score of 0.82."
         ]
     },
-    project2: {
+    project3: {
         title: "Facial Recognition App",
         timeline: "May 2024 - Jun 2024",
         details: [
@@ -16,7 +25,7 @@ const projectData = {
             "Developed a facial recognition app with Kivy and OpenCV achieving 97% testing accuracy in distinguishing images."
         ]
     },
-    project3: {
+    project4: {
         title: "Statistical Analysis of Premier League Dataset using SAS",
         timeline: "Oct 2023 - Dec 2023",
         details: [
@@ -24,7 +33,7 @@ const projectData = {
             "Utilized correlation and regression techniques, achieving 90.48% accuracy in predicting future results."
         ]
     },
-    project4: {
+    project5: {
         title: "Data Visualization for Olympics Dashboard",
         timeline: "Sep 2023 - Dec 2023",
         details: [
@@ -33,7 +42,7 @@ const projectData = {
             "Improved usability and visual storytelling by integrating CSS for an enhanced user interface and aesthetic appeal."
         ]
     },
-    project5: {
+    project6: {
         title: "Smart Car Parking Security: Multi-Modal Authentication & Attack Analysis",
         timeline: "Sep 2024 - Dec 2024",
         details: [
@@ -43,12 +52,12 @@ const projectData = {
             "Demonstrated the impact of fusion attacks on interconnected systems, providing valuable insights for improving smart parking infrastructure security."
         ]
     },
-    project6: {
+    project7: {
         title: "Comparative Analysis of Product Price and Commodity Price Trends",
         timeline: "Mar 2022 - Jan 2023",
         details: [
             "Developed a PowerBI dashboard to assess the correlation between raw material prices and the corresponding fluctuations in finished product prices.",
-            "Executed ETL and data modeling processes to integrate commodity prices data sourced from 3+ online platforms and purchase costs of finished goods retrieved from the company’s ERP system.",
+            "Executed ETL and data modeling processes to integrate commodity prices data sourced from 3+ online platforms and purchase costs of finished goods retrieved from the company's ERP system.",
             "Delivered actionable insights, improving data accuracy by 25% and reducing reporting time by 10 hours per month."
         ]
     }
@@ -79,8 +88,11 @@ function openProjectModal(projectId) {
         modalDetails.appendChild(li);
     });
     
-    // Show the modal
+    // Show the modal with fade animation
     modal.style.display = "block";
+    setTimeout(() => {
+        modal.classList.add("show");
+    }, 10);
 }
 
 // Add click event listeners to all project cards
@@ -96,13 +108,19 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Close modal when clicking the X button
     closeButton.addEventListener("click", function() {
-        modal.style.display = "none";
+        modal.classList.remove("show");
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 200);
     });
     
     // Close modal when clicking outside of it
     window.addEventListener("click", function(event) {
         if (event.target === modal) {
-            modal.style.display = "none";
+            modal.classList.remove("show");
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 200);
         }
     });
 });
@@ -145,8 +163,11 @@ function openAbstractModal(publicationId) {
     // Set paper link
     modalPaperLink.href = publication.paperLink;
     
-    // Show the modal
+    // Show the modal with fade animation
     abstractModal.style.display = "block";
+    setTimeout(() => {
+        abstractModal.classList.add("show");
+    }, 10);
 }
 
 // Add event listeners when DOM is loaded
@@ -164,14 +185,20 @@ document.addEventListener("DOMContentLoaded", function() {
     // Close modal when clicking the X button
     if (abstractCloseButton) {
         abstractCloseButton.addEventListener("click", function() {
-            abstractModal.style.display = "none";
+            abstractModal.classList.remove("show");
+            setTimeout(() => {
+                abstractModal.style.display = "none";
+            }, 200);
         });
     }
     
     // Close modal when clicking outside of it
     window.addEventListener("click", function(event) {
         if (event.target === abstractModal) {
-            abstractModal.style.display = "none";
+            abstractModal.classList.remove("show");
+            setTimeout(() => {
+                abstractModal.style.display = "none";
+            }, 200);
         }
     });
 });
@@ -198,19 +225,34 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function() {
     const viewMoreButton = document.getElementById('view-more-certs');
     const additionalCerts = document.getElementById('additional-certs');
-	const viewMoreContainer = document.getElementById('view-more-container');
+    const viewMoreContainer = document.getElementById('view-more-container');
     
-    if (viewMoreButton && additionalCerts) {
+    if (viewMoreButton && additionalCerts && viewMoreContainer) {
         viewMoreButton.addEventListener('click', function() {
-            if (additionalCerts.style.display === 'none') {
-                additionalCerts.style.display = 'grid';
-				viewMoreContainer.style.order = 1; // Move button below the additional certs
-                viewMoreButton.textContent = 'Show Less';
-                // viewMoreButton.querySelector('span').textContent = 'Show Less';
+            if (!additionalCerts.classList.contains('show')) {
+                // Show additional certifications
+                additionalCerts.classList.add('show');
+                
+                // Move button to after additional certifications with smooth transition
+                setTimeout(() => {
+                    additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts.nextSibling);
+                }, 100); // Small delay to let animation start
+                
+                // Update button text
+                viewMoreButton.querySelector('span').textContent = 'Show Less';
+                viewMoreButton.querySelector('i').className = 'icon solid fa-angle-up';
             } else {
-                additionalCerts.style.display = 'none';
-				viewMoreContainer.style.order = 0; // Move button back to the original position
-                viewMoreButton.textContent = 'View More Certifications';
+                // Move button back first, then hide additional certifications
+                additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts);
+                
+                // Hide additional certifications with fade out
+                setTimeout(() => {
+                    additionalCerts.classList.remove('show');
+                }, 50);
+                
+                // Update button text
+                viewMoreButton.querySelector('span').textContent = 'View More Certifications';
+                viewMoreButton.querySelector('i').className = 'icon solid fa-angle-down';
             }
         });
     }
