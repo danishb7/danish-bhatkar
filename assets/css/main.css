@@ -2971,6 +2971,92 @@ input, select, textarea {
 		}
 	}
 
+	/* Fix for mobile devices viewing desktop version - ensure footer icons are always visible */
+	@media screen and (min-width: 1025px) and (max-height: 600px) {
+		
+		#header {
+			min-height: 100vh;
+			max-height: none; /* Remove height constraint */
+		}
+		
+		#header > nav {
+			flex-grow: 0; /* Prevent nav from taking all available space */
+			max-height: calc(100vh - 200px); /* Ensure space for header and footer */
+			overflow-y: auto;
+		}
+		
+		#header > footer {
+			flex-shrink: 0;
+			margin-top: auto; /* Push footer to bottom */
+			padding: 1em 2em;
+		}
+	}
+	
+	/* Additional fix for very small heights (mobile desktop view) */
+	@media screen and (min-width: 1025px) and (max-height: 500px) {
+		
+		#header > header {
+			padding: 1em 2em 0.5em 2em;
+		}
+		
+		#header > header .avatar {
+			width: 4em;
+			margin: 0 auto 0.5em auto;
+		}
+		
+		#header > header h1 {
+			font-size: 1.2em;
+		}
+		
+		#header > nav ul li a {
+			padding: 0.5em 0;
+			font-size: 0.9em;
+		}
+		
+		#header > footer {
+			padding: 0.5em 2em;
+		}
+	}
+	
+	/* Ensure footer icons are always visible on mobile devices viewing desktop version */
+	@media screen and (min-width: 1025px) and (max-height: 700px) and (orientation: landscape) {
+		
+		#header {
+			justify-content: space-between; /* Distribute space between header, nav, and footer */
+		}
+		
+		#header > nav {
+			flex-grow: 0;
+			flex-shrink: 1;
+			max-height: calc(100vh - 180px); /* Reserve space for header and footer */
+			overflow-y: auto;
+		}
+		
+		#header > footer {
+			flex-shrink: 0;
+			position: relative;
+			bottom: 0;
+		}
+		
+		/* Make sure icons are visible */
+		#header > footer .icons {
+			display: flex !important;
+			justify-content: center;
+			gap: 1em;
+		}
+		
+		#header > footer .icons li {
+			display: inline-block !important;
+		}
+	}
+
+/* Section header styling - make only main section h3 headers use theme color */
+#main section > .container > h3 {
+	color: #4acaa8 !important;
+	font-weight: 700;
+	margin-bottom: 1.5em;
+}
+
 /* XLarge */
 
 	@media screen and (max-width: 1680px) {
