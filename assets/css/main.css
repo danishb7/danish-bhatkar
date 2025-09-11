@@ -2829,7 +2829,7 @@ input, select, textarea {
 	}
 
 		#main > section > .container {
-			padding: 6em 0 4em 0;
+			padding: 3em 0 4em 0;
 		}
 
 		#main > section:first-child {
@@ -2903,7 +2903,7 @@ input, select, textarea {
 		/* Main */
 
 			#main > section > .container {
-				padding: 4em 0 2em 0;
+				padding: 2.5em 0 2em 0;
 			}
 
 	}
@@ -3528,8 +3528,8 @@ input, select, textarea {
 .featured-certs, .additional-certs {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
+    gap: 20px;
+    margin-top: 25px;
 }
 
 .additional-certs {
@@ -3631,7 +3631,7 @@ input, select, textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* Add some spacing from the certifications above */
+    margin-top: 10px; /* Reduced spacing from certifications above */
 }
 
 .view-more-btn {
