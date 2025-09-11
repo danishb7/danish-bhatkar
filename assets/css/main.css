@@ -2706,7 +2706,7 @@ input, select, textarea {
 		background: linear-gradient(135deg, #4acaa8 0%, #3a9d85 100%);
 		color: #d2f2e9;
 		height: 100%;
-		overflow-y: hidden;
+		overflow-y: auto;
 		position: fixed;
 		text-align: center;
 		top: 0;
