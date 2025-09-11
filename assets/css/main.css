@@ -3050,16 +3050,11 @@ input, select, textarea {
 		}
 	}
 
-/* Section header styling - make all section h3 headers use theme color */
-#main section h3 {
+/* Section header styling - make only main section h3 headers use theme color */
+#main section > .container > h3 {
 	color: #4acaa8 !important;
 	font-weight: 700;
 	margin-bottom: 1.5em;
-}
-
-/* Also apply to any h4 headers that act as section headers */
-#main section > .container > h4 {
-	color: #4acaa8 !important;
 }
 
 /* XLarge */
