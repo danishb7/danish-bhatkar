@@ -3522,7 +3522,12 @@ input, select, textarea {
 
 /* Certifications Section  - - -   added on 4/16  */
 #certifications {
-    padding: 60px 0;
+    padding: 60px 0 10px 0;
+}
+
+/* Reduce space between certifications and next section */
+#seven {
+    margin-bottom: 0;
 }
 
 .featured-certs, .additional-certs {
@@ -3538,13 +3543,13 @@ input, select, textarea {
     transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, margin-top 0.2s ease-in-out;
     margin-top: 0;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
-    gap: 25px;
+    gap: 20px;
 }
 
 .additional-certs.show {
     opacity: 1;
     visibility: visible;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 /* Ensure all cert cards have consistent sizing */
@@ -3631,7 +3636,7 @@ input, select, textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px; /* Reduced spacing from certifications above */
+    margin-top: 5px; /* Further reduced spacing from certifications above */
 }
 
 .view-more-btn {
