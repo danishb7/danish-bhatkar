@@ -2202,6 +2202,9 @@ input, select, textarea {
 			display: block;
 			height: 20em;
 			border-radius: 0;
+			box-shadow: 0 3px 12px rgba(74, 202, 168, 0.25);
+			position: relative;
+			z-index: 1;
 		}
 
 			.image.main img {
@@ -2700,7 +2703,7 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background: #4acaa8;
+		background: linear-gradient(135deg, #4acaa8 0%, #3a9d85 100%);
 		color: #d2f2e9;
 		height: 100%;
 		overflow-y: hidden;
@@ -2709,6 +2712,8 @@ input, select, textarea {
 		top: 0;
 		width: 18em;
 		right: 0;
+		box-shadow: -3px 0 15px rgba(0, 0, 0, 0.15);
+		z-index: 10000;
 	}
 
 		#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
@@ -2789,9 +2794,10 @@ input, select, textarea {
 			}
 
 				#header > nav ul li {
-					border-top: solid 2px #5ccfb1;
+					border-top: solid 1px rgba(255, 255, 255, 0.1);
 					display: block;
 					padding: 0;
+					transition: background-color 0.2s ease;
 				}
 
 					#header > nav ul li a {
@@ -2809,6 +2815,10 @@ input, select, textarea {
 						#header > nav ul li a.active {
 							background: #fff;
 							color: #4acaa8 !important;
+						}
+
+						#header > nav ul li a:hover:not(.active) {
+							background: rgba(255, 255, 255, 0.1);
 						}
 
 					#header > nav ul li:first-child {
