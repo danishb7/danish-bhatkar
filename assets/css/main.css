@@ -3580,10 +3580,16 @@ input, select, textarea {
 
 /* Company name styling (now h4 instead of h3) */
 .job > h4 {
-    color: #4acaa8;
+    color: #777;
     font-size: 1.35em;
     margin-bottom: 0.75em;
     font-weight: 700;
+}
+
+/* Position/Role styling - slightly smaller font */
+.job-details .position {
+    font-size: 1.1em;
+    margin: 0;
 }
 
 /* Ensure all cert cards have consistent sizing */
