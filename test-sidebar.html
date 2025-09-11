@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Sidebar Scrollability Test</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* Test styles to add more content to the sidebar */
+        .test-nav-items {
+            border-top: solid 1px rgba(255, 255, 255, 0.1);
+        }
+        .test-nav-items a {
+            color: #ffffff !important;
+            display: block;
+            padding: 0.65em 0;
+            text-decoration: none;
+            border: 0;
+            transition: none;
+        }
+        .test-nav-items a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .window-info {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            z-index: 20000;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Window size info -->
+    <div class="window-info" id="windowInfo">
+        Window: <span id="windowSize"></span><br>
+        Viewport: <span id="viewportSize"></span>
+    </div>
+
+    <!-- Header/Sidebar -->
+    <section id="header">
+        <header>
+            <span class="image avatar"><img src="images/profilepic.png" alt="" /></span>
+            <h1 id="logo"><a href="#">Danish Bhatkar</a></h1>
+        </header>
+        <nav id="nav">
+            <ul>
+                <li><a href="#one" class="active">About</a></li>
+                <li><a href="#two">Education</a></li>
+                <li><a href="#three">Skills</a></li>
+                <li><a href="#four">Work Experience</a></li>
+                <li><a href="#five">Projects</a></li>
+                <li><a href="#six">Research</a></li>
+                <li><a href="#seven">Certifications</a></li>
+                <li><a href="#eight">Contact</a></li>
+                
+                <!-- Additional test items to force scrolling -->
+                <li class="test-nav-items"><a href="#test1">Test Item 1</a></li>
+                <li class="test-nav-items"><a href="#test2">Test Item 2</a></li>
+                <li class="test-nav-items"><a href="#test3">Test Item 3</a></li>
+                <li class="test-nav-items"><a href="#test4">Test Item 4</a></li>
+                <li class="test-nav-items"><a href="#test5">Test Item 5</a></li>
+                <li class="test-nav-items"><a href="#test6">Test Item 6</a></li>
+                <li class="test-nav-items"><a href="#test7">Test Item 7</a></li>
+                <li class="test-nav-items"><a href="#test8">Test Item 8</a></li>
+                <li class="test-nav-items"><a href="#test9">Test Item 9</a></li>
+                <li class="test-nav-items"><a href="#test10">Test Item 10</a></li>
+                <li class="test-nav-items"><a href="#test11">Test Item 11</a></li>
+                <li class="test-nav-items"><a href="#test12">Test Item 12</a></li>
+                <li class="test-nav-items"><a href="#test13">Test Item 13</a></li>
+                <li class="test-nav-items"><a href="#test14">Test Item 14</a></li>
+                <li class="test-nav-items"><a href="#test15">Test Item 15</a></li>
+            </ul>
+        </nav>
+        <footer>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/danish-bhatkar/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/danishb7/" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+                <li><a href="mailto:bhatkardanish7@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+        </footer>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <section id="one">
+                <div class="container">
+                    <h2>Sidebar Scrollability Test</h2>
+                    <p>This page tests the sidebar scrollability across different window sizes.</p>
+                    <p><strong>Instructions:</strong></p>
+                    <ul>
+                        <li>Resize your browser window to different sizes</li>
+                        <li>Check that the sidebar remains scrollable on all laptop screen sizes</li>
+                        <li>The sidebar should show a scroll bar when content overflows</li>
+                        <li>On screens > 1024px wide, the sidebar should remain fixed</li>
+                        <li>On screens ≤ 1024px wide, the sidebar becomes a mobile drawer</li>
+                    </ul>
+                    <p>Current window dimensions are shown in the top-left corner.</p>
+                    
+                    <h3>Common Laptop Resolutions to Test:</h3>
+                    <ul>
+                        <li>1366x768 (Most common laptop)</li>
+                        <li>1440x900 (MacBook Air 13")</li>
+                        <li>1600x900 (Common widescreen)</li>
+                        <li>1920x1080 (Full HD laptops)</li>
+                        <li>2560x1440 (High-res laptops)</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function updateWindowInfo() {
+            const windowSize = window.innerWidth + 'x' + window.innerHeight;
+            const viewportSize = document.documentElement.clientWidth + 'x' + document.documentElement.clientHeight;
+            
+            document.getElementById('windowSize').textContent = windowSize;
+            document.getElementById('viewportSize').textContent = viewportSize;
+        }
+        
+        // Update on load and resize
+        updateWindowInfo();
+        window.addEventListener('resize', updateWindowInfo);
+    </script>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

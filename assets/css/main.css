@@ -2699,21 +2699,61 @@ input, select, textarea {
 		-webkit-flex-direction: column;
 		-ms-flex-direction: column;
 		flex-direction: column;
-		-moz-justify-content: space-between;
-		-webkit-justify-content: space-between;
-		-ms-justify-content: space-between;
-		justify-content: space-between;
+		-moz-justify-content: flex-start;
+		-webkit-justify-content: flex-start;
+		-ms-justify-content: flex-start;
+		justify-content: flex-start;
 		background: linear-gradient(135deg, #4acaa8 0%, #3a9d85 100%);
 		color: #d2f2e9;
 		height: 100%;
+		min-height: 100vh;
+		max-height: 100vh;
 		overflow-y: auto;
+		overflow-x: hidden;
 		position: fixed;
 		text-align: center;
 		top: 0;
+		bottom: 0;
 		width: 18em;
 		right: 0;
 		box-shadow: -3px 0 15px rgba(0, 0, 0, 0.15);
 		z-index: 10000;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: thin;
+		scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+	}
+
+	/* Custom scrollbar for webkit browsers */
+	#header::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	#header::-webkit-scrollbar-track {
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 3px;
+	}
+
+	#header::-webkit-scrollbar-thumb {
+		background: rgba(255, 255, 255, 0.3);
+		border-radius: 3px;
+	}
+
+	#header::-webkit-scrollbar-thumb:hover {
+		background: rgba(255, 255, 255, 0.5);
+	}
+
+	/* Ensure nav section scrolls properly */
+	#header > nav::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	#header > nav::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	#header > nav::-webkit-scrollbar-thumb {
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 2px;
 	}
 
 		#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
@@ -2741,6 +2781,10 @@ input, select, textarea {
 			-webkit-flex-shrink: 0;
 			-ms-flex-shrink: 0;
 			flex-shrink: 0;
+			-moz-flex-basis: auto;
+			-webkit-flex-basis: auto;
+			-ms-flex-basis: auto;
+			flex-basis: auto;
 			padding: 2em 2em 1.5em 2em;
 		}
 
@@ -2766,8 +2810,10 @@ input, select, textarea {
 			-webkit-flex-shrink: 0;
 			-ms-flex-shrink: 0;
 			flex-shrink: 0;
-			bottom: 0;
-			left: 0;
+			-moz-flex-basis: auto;
+			-webkit-flex-basis: auto;
+			-ms-flex-basis: auto;
+			flex-basis: auto;
 			padding: 1.5em 2em;
 			width: 100%;
 		}
@@ -2785,6 +2831,8 @@ input, select, textarea {
 			-webkit-flex-grow: 1;
 			-ms-flex-grow: 1;
 			flex-grow: 1;
+			overflow-y: auto;
+			min-height: 0;
 		}
 
 			#header > nav ul {
@@ -2879,6 +2927,49 @@ input, select, textarea {
 				#footer .copyright li a {
 					color: inherit;
 				}
+
+/* Ensure sidebar works on all laptop sizes and orientations */
+	@media screen and (min-width: 1025px) {
+		
+		#header {
+			height: 100%;
+			min-height: 100vh;
+			max-height: 100vh;
+			overflow-y: auto;
+		}
+		
+		#header > nav {
+			overflow-y: auto;
+			flex-grow: 1;
+			min-height: 0;
+			max-height: none;
+		}
+		
+		#header > header {
+			flex-shrink: 0;
+		}
+		
+		#header > footer {
+			flex-shrink: 0;
+		}
+	}
+
+	/* Special handling for short laptop screens */
+	@media screen and (min-width: 1025px) and (max-height: 768px) {
+		
+		#header > header {
+			padding: 1.5em 2em 1em 2em;
+		}
+		
+		#header > header .avatar {
+			width: 6em;
+			margin: 0 auto 1em auto;
+		}
+		
+		#header > footer {
+			padding: 1em 2em;
+		}
+	}
 
 /* XLarge */
 
@@ -2986,11 +3077,19 @@ input, select, textarea {
 				-webkit-transition: -webkit-transform 0.5s ease;
 				-ms-transition: -ms-transform 0.5s ease;
 				transition: transform 0.5s ease;
-				display: block;
+				display: flex;
+				-moz-flex-direction: column;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
 				height: 100%;
+				min-height: 100vh;
+				max-height: 100vh;
 				overflow-y: auto;
+				overflow-x: hidden;
 				position: fixed;
 				top: 0;
+				bottom: 0;
 				width: 18em;
 				z-index: 10002;
 				-moz-transform: translateX(18em);
@@ -2998,6 +3097,7 @@ input, select, textarea {
 				-ms-transform: translateX(18em);
 				transform: translateX(18em);
 				right: 0;
+				-webkit-overflow-scrolling: touch;
 			}
 
 				#header > footer {
@@ -3194,6 +3294,9 @@ input, select, textarea {
 				-ms-transform: translateX(14em);
 				transform: translateX(14em);
 				right: 0;
+				overflow-y: auto;
+				overflow-x: hidden;
+				-webkit-overflow-scrolling: touch;
 			}
 
 				#header > header {
