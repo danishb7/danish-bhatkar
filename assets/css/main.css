@@ -3569,6 +3569,23 @@ input, select, textarea {
     }
 }
 
+/* Work Experience Section Styling */
+.job {
+    margin-bottom: 2.5em;
+}
+
+.job:last-child {
+    margin-bottom: 0;
+}
+
+/* Company name styling (now h4 instead of h3) */
+.job > h4 {
+    color: #4acaa8;
+    font-size: 1.35em;
+    margin-bottom: 0.75em;
+    font-weight: 700;
+}
+
 /* Ensure all cert cards have consistent sizing */
 .featured-certs .cert-card,
 .additional-certs .cert-card {
