@@ -3765,27 +3765,7 @@ input, select, textarea {
     }
 }
 
-@keyframes buttonSlideDown {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(150px);
-        opacity: 0.7;
-    }
-}
-
-@keyframes buttonSlideUp {
-    from {
-        transform: translateY(150px);
-        opacity: 0.7;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+/* Button animations removed - using instant movement for now */
 
 @keyframes slideInFromBottom {
     0% {
@@ -3928,13 +3908,7 @@ input, select, textarea {
     transition: all 0.2s ease-in-out; /* Smooth transition when moving */
 }
 
-.view-more-container.sliding-down {
-    animation: buttonSlideDown 0.3s ease-out forwards;
-}
-
-.view-more-container.sliding-up {
-    animation: buttonSlideUp 0.3s ease-out forwards;
-}
+/* Button animation classes removed - using instant movement */
 
 .view-more-btn {
     background-color: transparent;
