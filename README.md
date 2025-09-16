@@ -52,9 +52,9 @@ AWS Cloud Practitioner · SAS Certified Associate · Excel Skills (Macquarie) ·
 ---
 
 ## 📬 Contact  
-- [LinkedIn](your-linkedin)  
-- [GitHub](your-github)  
-- Email: your@email.com  
+- [LinkedIn](https://www.linkedin.com/in/danish-bhatkar/)  
+- [GitHub](https://github.com/danishb7)  
+- Email: bhatkardanish7@gmail.com  
 
 ---
 
