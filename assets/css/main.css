@@ -3905,17 +3905,6 @@ input, select, textarea {
     justify-content: center;
     align-items: center;
     margin: 15px 0; /* Consistent margin top and bottom */
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out; /* Smooth button movement */
-}
-
-.view-more-container.moving-down {
-    transform: translateY(120px);
-    opacity: 0.8;
-}
-
-.view-more-container.moving-up {
-    transform: translateY(0);
-    opacity: 1;
 }
 
 /* Button animation classes removed - using instant movement */

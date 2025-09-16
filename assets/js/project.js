@@ -232,58 +232,37 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!additionalCerts.classList.contains('show')) {
                 // EXPANDING: Show additional certifications
                 
-                // Step 1: Button smoothly moves down as boxes start appearing
-                viewMoreContainer.classList.add('moving-down');
+                // Show certification boxes with animation
                 additionalCerts.classList.add('show');
                 additionalCerts.classList.add('slide-in');
                 
-                // Step 2: After button finishes moving down, reposition DOM and move button up
-                setTimeout(() => {
-                    // Move button to position after certification boxes
-                    additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts.nextSibling);
-                    
-                    // Button smoothly moves up to final position
-                    viewMoreContainer.classList.remove('moving-down');
-                    viewMoreContainer.classList.add('moving-up');
-                    
-                    // Clean up animation classes
-                    setTimeout(() => {
-                        additionalCerts.classList.remove('slide-in');
-                        viewMoreContainer.classList.remove('moving-up');
-                    }, 400);
-                    
-                }, 400); // Wait for button and boxes to finish their animations
+                // Move button to position after certification boxes (instant)
+                additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts.nextSibling);
                 
                 // Update button text and icon
                 viewMoreButton.querySelector('span').textContent = 'Show Less';
                 viewMoreButton.querySelector('i').className = 'icon solid fa-angle-up';
                 
+                // Clean up animation class after animation completes
+                setTimeout(() => {
+                    additionalCerts.classList.remove('slide-in');
+                }, 400);
+                
             } else {
                 // COLLAPSING: Hide additional certifications
                 
-                // Step 1: Boxes start sliding out and button starts moving down simultaneously
+                // Start hiding boxes with animation
                 additionalCerts.classList.add('slide-out');
-                viewMoreContainer.classList.add('moving-down');
                 
-                // Step 2: After animations, reposition DOM and move button up to original position
+                // After boxes finish sliding out, move button back and hide boxes
                 setTimeout(() => {
-                    // Move button back to original position
+                    // Move button back to original position (instant)
                     additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts);
                     
                     // Hide boxes completely
                     additionalCerts.classList.remove('show');
                     additionalCerts.classList.remove('slide-out');
-                    
-                    // Button smoothly moves up to original position
-                    viewMoreContainer.classList.remove('moving-down');
-                    viewMoreContainer.classList.add('moving-up');
-                    
-                    // Clean up
-                    setTimeout(() => {
-                        viewMoreContainer.classList.remove('moving-up');
-                    }, 400);
-                    
-                }, 300); // Wait for slide-out animation to complete
+                }, 300);
                 
                 // Update button text and icon immediately
                 viewMoreButton.querySelector('span').textContent = 'View More Certifications';
