@@ -262,11 +262,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Hide boxes completely
                     additionalCerts.classList.remove('show');
                     additionalCerts.classList.remove('slide-out');
+                    
+                    // Update button text and icon AFTER everything is done
+                    viewMoreButton.querySelector('span').textContent = 'View More Certifications';
+                    viewMoreButton.querySelector('i').className = 'icon solid fa-angle-down';
                 }, 300);
-                
-                // Update button text and icon immediately
-                viewMoreButton.querySelector('span').textContent = 'View More Certifications';
-                viewMoreButton.querySelector('i').className = 'icon solid fa-angle-down';
             }
         });
     }
