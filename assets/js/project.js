@@ -230,29 +230,43 @@ document.addEventListener('DOMContentLoaded', function() {
     if (viewMoreButton && additionalCerts && viewMoreContainer) {
         viewMoreButton.addEventListener('click', function() {
             if (!additionalCerts.classList.contains('show')) {
-                // Show additional certifications
+                // EXPANDING: Show additional certifications
+                
+                // Show certification boxes with animation
                 additionalCerts.classList.add('show');
+                additionalCerts.classList.add('slide-in');
                 
-                // Move button to after additional certifications with smooth transition
-                setTimeout(() => {
-                    additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts.nextSibling);
-                }, 100); // Small delay to let animation start
+                // Move button to position after certification boxes (instant)
+                additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts.nextSibling);
                 
-                // Update button text
+                // Update button text and icon
                 viewMoreButton.querySelector('span').textContent = 'Show Less';
                 viewMoreButton.querySelector('i').className = 'icon solid fa-angle-up';
-            } else {
-                // Move button back first, then hide additional certifications
-                additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts);
                 
-                // Hide additional certifications with fade out
+                // Clean up animation class after animation completes
                 setTimeout(() => {
-                    additionalCerts.classList.remove('show');
-                }, 50);
+                    additionalCerts.classList.remove('slide-in');
+                }, 400);
                 
-                // Update button text
-                viewMoreButton.querySelector('span').textContent = 'View More Certifications';
-                viewMoreButton.querySelector('i').className = 'icon solid fa-angle-down';
+            } else {
+                // COLLAPSING: Hide additional certifications
+                
+                // Start hiding boxes with animation
+                additionalCerts.classList.add('slide-out');
+                
+                // After boxes finish sliding out, move button back and hide boxes
+                setTimeout(() => {
+                    // Move button back to original position (instant)
+                    additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts);
+                    
+                    // Hide boxes completely
+                    additionalCerts.classList.remove('show');
+                    additionalCerts.classList.remove('slide-out');
+                    
+                    // Update button text and icon AFTER everything is done
+                    viewMoreButton.querySelector('span').textContent = 'View More Certifications';
+                    viewMoreButton.querySelector('i').className = 'icon solid fa-angle-down';
+                }, 300);
             }
         });
     }

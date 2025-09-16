@@ -3744,7 +3744,14 @@ input, select, textarea {
     display: grid !important;
     opacity: 1;
     margin-top: 15px; /* Small margin when shown */
-    animation: fadeInUp 0.2s ease-in-out;
+}
+
+.additional-certs.slide-in {
+    animation: slideInFromBottom 0.4s ease-out forwards;
+}
+
+.additional-certs.slide-out {
+    animation: slideOutToBottom 0.3s ease-in forwards;
 }
 
 @keyframes fadeInUp {
@@ -3755,6 +3762,38 @@ input, select, textarea {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Button animations removed - using instant movement for now */
+
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    60% {
+        opacity: 0.8;
+        transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slideOutToBottom {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    40% {
+        opacity: 0.6;
+        transform: translateY(-10px) scale(0.98);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
     }
 }
 
@@ -3866,8 +3905,9 @@ input, select, textarea {
     justify-content: center;
     align-items: center;
     margin: 15px 0; /* Consistent margin top and bottom */
-    transition: all 0.2s ease-in-out; /* Smooth transition when moving */
 }
+
+/* Button animation classes removed - using instant movement */
 
 .view-more-btn {
     background-color: transparent;
