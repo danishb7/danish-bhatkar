@@ -3765,34 +3765,23 @@ input, select, textarea {
     }
 }
 
-@keyframes smoothMoveDown {
-    0% {
+@keyframes buttonSlideDown {
+    from {
         transform: translateY(0);
         opacity: 1;
     }
-    100% {
-        transform: translateY(var(--move-distance, 200px));
-        opacity: 0.9;
+    to {
+        transform: translateY(150px);
+        opacity: 0.7;
     }
 }
 
-@keyframes smoothMoveUp {
-    0% {
-        transform: translateY(var(--move-distance, 200px));
-        opacity: 0.9;
+@keyframes buttonSlideUp {
+    from {
+        transform: translateY(150px);
+        opacity: 0.7;
     }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes resetPosition {
-    0% {
-        transform: translateY(var(--move-distance, 200px));
-        opacity: 0.9;
-    }
-    100% {
+    to {
         transform: translateY(0);
         opacity: 1;
     }
@@ -3939,16 +3928,12 @@ input, select, textarea {
     transition: all 0.2s ease-in-out; /* Smooth transition when moving */
 }
 
-.view-more-container.smooth-move-down {
-    animation: smoothMoveDown 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.view-more-container.sliding-down {
+    animation: buttonSlideDown 0.3s ease-out forwards;
 }
 
-.view-more-container.smooth-move-up {
-    animation: smoothMoveUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.view-more-container.reset-position {
-    animation: resetPosition 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.view-more-container.sliding-up {
+    animation: buttonSlideUp 0.3s ease-out forwards;
 }
 
 .view-more-btn {
