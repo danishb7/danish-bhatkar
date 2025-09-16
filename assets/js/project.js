@@ -230,25 +230,45 @@ document.addEventListener('DOMContentLoaded', function() {
     if (viewMoreButton && additionalCerts && viewMoreContainer) {
         viewMoreButton.addEventListener('click', function() {
             if (!additionalCerts.classList.contains('show')) {
+                // Add moving down animation
+                viewMoreContainer.classList.add('moving-down');
+                
                 // Show additional certifications
                 additionalCerts.classList.add('show');
                 
                 // Move button to after additional certifications with smooth transition
                 setTimeout(() => {
                     additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts.nextSibling);
-                }, 100); // Small delay to let animation start
+                    // Remove moving-down class and add moving-up for final position
+                    viewMoreContainer.classList.remove('moving-down');
+                    viewMoreContainer.classList.add('moving-up');
+                    
+                    // Remove moving-up class after animation completes
+                    setTimeout(() => {
+                        viewMoreContainer.classList.remove('moving-up');
+                    }, 200);
+                }, 200); // Wait for moveDown animation to complete
                 
                 // Update button text
                 viewMoreButton.querySelector('span').textContent = 'Show Less';
                 viewMoreButton.querySelector('i').className = 'icon solid fa-angle-up';
             } else {
-                // Move button back first, then hide additional certifications
-                additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts);
+                // Add moving up animation (reverse direction)
+                viewMoreContainer.classList.add('moving-down');
                 
-                // Hide additional certifications with fade out
+                // Move button back first with animation
                 setTimeout(() => {
-                    additionalCerts.classList.remove('show');
-                }, 50);
+                    additionalCerts.parentNode.insertBefore(viewMoreContainer, additionalCerts);
+                    // Remove moving-down and add moving-up for final position
+                    viewMoreContainer.classList.remove('moving-down');
+                    viewMoreContainer.classList.add('moving-up');
+                    
+                    // Hide additional certifications with fade out
+                    setTimeout(() => {
+                        additionalCerts.classList.remove('show');
+                        viewMoreContainer.classList.remove('moving-up');
+                    }, 200);
+                }, 200);
                 
                 // Update button text
                 viewMoreButton.querySelector('span').textContent = 'View More Certifications';

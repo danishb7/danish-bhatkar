@@ -3758,6 +3758,28 @@ input, select, textarea {
     }
 }
 
+@keyframes moveDown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(20px);
+        opacity: 0.8;
+    }
+}
+
+@keyframes moveUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0.8;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 /* Work Experience Section Styling */
 .job {
     margin-bottom: 2.5em;
@@ -3867,6 +3889,14 @@ input, select, textarea {
     align-items: center;
     margin: 15px 0; /* Consistent margin top and bottom */
     transition: all 0.2s ease-in-out; /* Smooth transition when moving */
+}
+
+.view-more-container.moving-down {
+    animation: moveDown 0.2s ease-in-out forwards;
+}
+
+.view-more-container.moving-up {
+    animation: moveUp 0.2s ease-in-out forwards;
 }
 
 .view-more-btn {
